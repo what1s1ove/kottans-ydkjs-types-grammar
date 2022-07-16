@@ -14,6 +14,10 @@
           margin-top: 190px;
         }
 
+        .slide .center-title--center {
+          text-align: center;
+        }
+
         .slide--kottans {
           background-image: url(./pictures/kottans-logo.svg);
           background-repeat: no-repeat;
@@ -86,8 +90,84 @@
       </style>
     </section>
 
+    <section class="slide slide--kottans" id="why-types">
+      <h2 class="why-types__title center-title">Why types❓</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="st-vs-dm">
+      <h2 class="st-vs-dm__title">Static vs. Dynamic typing</h2>
+      <ul class="st-vs-dm__types next">
+        <li class="st-vs-dm__types-item">
+          <ul class="st-vs-dm__list">
+            <li class="st-vs-dm__item">Assigned to a <b>variable</b></li>
+            <li class="st-vs-dm__item next">Works at <b>compiletime</b> <br>(& while data fetching)</li>
+          </ul>
+        </li>
+        <li class="st-vs-dm__types-item next">
+          <ul class="st-vs-dm__list">
+            <li class="st-vs-dm__item">Assigned to a <b>value</b></li>
+            <li class="st-vs-dm__item next">Works at <b>runtime</b></li>
+          </ul>
+        </li>
+      </ul>
+
+      <style>
+        #st-vs-dm .st-vs-dm__title {
+          text-align: center;
+        }
+
+        #st-vs-dm .st-vs-dm__types {
+          margin: 0;
+          display: flex;
+          justify-content: center;
+          gap: 0 130px;
+        }
+
+        #st-vs-dm .st-vs-dm__types-item::before {
+          display: none;
+        }
+
+        #st-vs-dm .st-vs-dm__list {
+          margin: 0;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="st-wk-types">
+      <h2 class="st-wk-types__title">Strong vs. Weak typing</h2>
+      <p class="st-wk-types__desc next">👮 🚔</p>
+
+      <style>
+        #st-wk-types .st-wk-types__title {
+          margin-bottom: 120px;
+        }
+
+        #st-wk-types .st-wk-types__desc {
+          text-align: center;
+          font-size: 80px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="js-has">
+      <h2 class="js-has__title center-title">JS has❓</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="browser">
+      <h2 class="browser__title">JS <s>has</s> is –</h2>
+      <img class="browser__img" src="pictures/old-browser.png" width="350" alt="Old browser">
+
+      <style>
+        #browser .browser__img {
+          display: block;
+          margin: 0 auto;
+        }
+      </style>
+    </section>
+
     <section class="slide slide--kottans" id="thanks">
-      <h2>Thanks 🍉</h2>
+      <h2 class="thanks__title">Thanks 🍉</h2>
+
       <style>
         #thanks {
           display: grid;
