@@ -55,8 +55,8 @@
     </header>
 
     <section class="slide" id="cover">
-      <h2 class="cover__title">Clean Mentor</h2>
-      <p class="cover__desc">🥋</p>
+      <h2 class="cover__title">YDKJS. Types Grammar</h2>
+      <p class="cover__desc">🟨</p>
       <p class="copyright right">
         <a href="https://whatislove.dev/" target="_blank" rel="noreferrer">© Vladyslav Zubko</a>
       </p>
@@ -151,6 +151,16 @@
     <section class="slide slide--kottans" id="tasks">
       <h2 class="visually-hidden">Tasks</h2>
       <img class="cover" src="pictures/tasks.png" alt="Tasks">
+    </section>
+
+    <section class="slide slide--bsa active" id="today">
+      <h2>Today in program...</h2>
+      <ul class="next visited">
+        <li>Why types</li>
+        <li class="next">Data types in JS</li>
+        <li class="next">Type Conversions</li>
+        <li class="next">Practice</li>
+      </ul>
     </section>
 
     <section class="slide slide--kottans" id="why-types">
@@ -407,10 +417,387 @@
       <h2 class="what-to-read__title">What to Read ✍️</h2>
       <ul class="what-to-read__list">
         <li class="what-to-read__item">
+          <a href="https://javascript.info/types" target="_blank" rel="noreferrer">JavaScript.info – Data types</a>
+        </li>
+        <li class="what-to-read__item">
           <a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md" target="_blank" rel="noreferrer">You Don't Know JS – Types & Grammar</a>
         </li>
         <li class="what-to-read__item">
-          <a href="https://javascript.info/types" target="_blank" rel="noreferrer">JavaScript.info – Data types</a>
+          <a href="https://tc39.es/ecma262/#sec-ecmascript-data-types-and-values" target="_blank" rel="noreferrer">TC39. Data Types and Values</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide slide--kottans" id="data-questions">
+      <h2 class="data-questions__title center-title">Questions❓</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="type-conversions">
+      <h2 class="type-conversions__title center-title">Type Conversions 🧶</h2>
+      <a class="bottom-link" href="https://tc39.es/ecma262/#sec-type-conversion" target="_blank" rel="noreferrer">Type Conversion</a>
+    </section>
+
+    <section class="slide slide--kottans" id="wtfjs">
+      <h2 class="wtfjs__title visually-hidden">WTFJS</h2>
+      <img class="wtfjs__img cover" src="pictures/wthjs.png" alt="WTFKS">
+      <a class="bottom-link" href="https://www.youtube.com/watch?v=et8xNAc2ic8" target="_blank" rel="noreferrer">dotJS 2012 - Brian Leroux - WTFJS</a>
+
+      <style>
+        #wtfjs .wtfjs__img {
+          transform: translate(-50%, -50%) scale(1.079);
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="conversions-kinds">
+      <h2 class="conversions-kinds__title">Kinds 🦄</h2>
+      <ul class="conversions-kinds__list">
+        <li class="conversions-kinds__item"><code>ToNumber</code></li>
+        <li class="conversions-kinds__item"><code>ToString</code></li>
+        <li class="conversions-kinds__item"><code>ToBoolean</code></li>
+        <li class="conversions-kinds__item"><code>ToPrimitive</code></li>
+      </ul>
+    </section>
+
+    <section class="slide slide--kottans" id="to-boolean">
+      <h2 class="to-boolean__title">ToBoolean / Boolean(something)</h2>
+      <ul class="to-boolean__list next">
+        <li class="to-boolean__item">Any object – always <code>true</code></li>
+        <li class="to-boolean__item next">
+          Everything else – also <code>true</code>, except for <b>7</b> values
+          <ul class="to-boolean__list next">
+            <li class="to-boolean__item"><code>false</code></li>
+            <li class="to-boolean__item next"><code>null</code></li>
+            <li class="to-boolean__item next"><code>undefined</code></li>
+            <li class="to-boolean__item next"><code>''</code></li>
+            <li class="to-boolean__item next"><code>0</code>, <code>-0</code></li>
+            <li class="to-boolean__item next"><code>NaN</code></li>
+          </ul>
+        </li>
+      </ul>
+
+      <style>
+        #to-boolean .to-boolean__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="to-string">
+      <h2 class="to-string__title">ToString / String(something)</h2>
+      <ul class="to-string__list next">
+        <li class="to-string__item">For primitives – add <b>quotes</b></li>
+        <li class="to-string__item next">For references – call <code>ToPrimitive</code></li>
+      </ul>
+
+      <style>
+        #to-string .to-string__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="to-number">
+      <h2 class="to-number__title">ToNumber / Number(something)</h2>
+      <ul class="to-number__list next">
+        <li class="to-number__item">For strings – <b>try</b> to convert to number</li>
+        <li class="to-number__item next">For booleans – <code>true</code>/<code>false</code> to <code>1</code>/<code>0</code></li>
+        <li class="to-number__item next">For references – call <code>ToPrimitive</code></li>
+      </ul>
+
+      <style>
+        #to-number .to-number__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="string-to-number">
+      <h2 class="string-to-number__title">String To Number</h2>
+      <ul class="string-to-number__list next">
+        <li class="string-to-number__item">Empty string – <code>0</code></li>
+        <li class="string-to-number__item next">Remove spaces and <b>try</b> to convert</li>
+        <li class="string-to-number__item next">At least one not a number – <code>NaN</code></li>
+      </ul>
+      <pre class="string-to-number__code next">
+        <code>Number(' 14 ') // 42</code>
+        <code>Number('14px') // NaN</code>
+        <div class="next">
+          <code> </code>
+          <code>pastInt('14px') // 14</code>
+          <code>pastFloat('14px') // 14</code>
+        </div>
+      </pre>
+
+      <style>
+        #string-to-number .string-to-number__item,
+        #string-to-number .string-to-number__code {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="to-primitive">
+      <h2 class="to-primitive__title">ToPrimitive</h2>
+      <ol class="to-primitive__list">
+        <li class="to-primitive__item"><code>Symbol.toPrimitive</code></li>
+        <li class="to-primitive__item">
+          <code>valueOf</code> & <code>toString</code>
+          <ul class="to-primitive__list">
+            <li>If method returned a non-primitive – call another</li>
+            <li>If methods returned a non-primitive – error</li>
+          </ul>
+        </li>
+      </ol>
+
+      <style>
+        #to-primitive .to-primitive__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="symbol-to-primitive">
+      <h2 class="symbol-to-primitive">Symbol.toPrimitive</h2>
+      <pre class="symbol-to-primitive__code next">
+        <code>const kottan = {</code>
+          <div class="next">
+            <code>  [Symbol.toPrimitive](hint) {</code>
+              <div class="next">
+                <code>    switch (hint) {</code>
+                  <code>      cast 'string': return '🐈‍⬛'</code>
+                  <code>      cast 'number': return '🐈‍'</code>
+                  <code>      cast 'default': return 'cat'</code>
+                  <code>    }</code>
+              </div>
+              <code>  }</code>
+          </div>
+        <code>}</code>
+      </pre>
+
+      <style>
+        #symbol-to-primitive .symbol-to-primitive__code {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="without-symbol-to-primitive">
+      <h2 class="without-symbol-to-primitive__title">Without Symbol.toPrimitive</h2>
+      <pre class="without-symbol-to-primitive__code next">
+        <code>const kottan = {</code>
+        <code>  valueOf() { return '🐈‍⬛' },</code>
+        <code>  toString() { return {} }</code>
+        <code>}</code>
+        <div class="next">
+          <code> </code>
+          <code>'Cat: ' + kottan // "Cat: 🐈‍⬛"</code>
+        </div>
+        <div class="next">
+          <code> </code>
+          <code>String(kottan) // "🐈‍⬛" </code>
+        </div>
+      </pre>
+
+      <style>
+        #without-symbol-to-primitive .without-symbol-to-primitive__code {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="implicit-explicit">
+      <h2 class="implicit-explicit__title center-title">Implicit and Explicit 🪡</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="implicit-explicit-boolean">
+      <h2 class="implicit-explicit-boolean">ToBoolean</h2>
+      <ul class="implicit-explicit-boolean__list next">
+        <li class="implicit-explicit-boolean__item"><code>Boolean()</code></li>
+        <li class="implicit-explicit-boolean__item next"><code>!!</code></li>
+        <li class="implicit-explicit-boolean__item next"><code>if</code>, <code>for</code>, <code>do/while</code></li>
+        <li class="implicit-explicit-boolean__item next"><code>? :</code></li>
+        <li class="implicit-explicit-boolean__item next">
+            Left part of <code>||</code> and <code>&&</code>
+            <ul class="implicit-explicit-boolean__list next">
+              <li class="implicit-explicit-boolean__item">Lazy evaluation</li>
+            </ul>
+        </li>
+      </ul>
+
+      <style>
+        #implicit-explicit-boolean .implicit-explicit-boolean__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="implicit-explicit-string">
+      <h2 class="implicit-explicit-string">ToString</h2>
+      <ul class="implicit-explicit-string__list next">
+        <li class="implicit-explicit-string__item"><code>String()</code></li>
+        <li class="implicit-explicit-string__item next"><code>object[key]</code></li>
+      </ul>
+
+      <style>
+        #implicit-explicit-string .implicit-explicit-string__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="implicit-explicit-number">
+      <h2 class="implicit-explicit-number">ToNumber</h2>
+      <ul class="implicit-explicit-number__list next">
+        <li class="implicit-explicit-number__item"><code>Number()</code></li>
+        <li class="implicit-explicit-number__item next">
+          Math & Bitwise operations
+          <ul class="implicit-explicit-number__list next">
+            <li class="implicit-explicit-number__item">
+              Except – binary plus (<code>value + value</code>)
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <style>
+        #implicit-explicit-number .implicit-explicit-number__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="comparisons">
+      <h2 class="comparisons">Comparisons 🤼</h2>
+      <ul class="comparisons__list next">
+        <li class="comparisons__item"><code>===</code>, <code>!==</code> – without conversions</li>
+        <li class="comparisons__item next"><code>===</code>, <code>===</code> – compare objects by reference</li>
+        <li class="comparisons__item next">
+          <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>>=</code>, <code><=</code> – prefer numbers
+          <ul class="comparisons__list next">
+            <li class="comparisons__item">
+              special case: <span class="next"><code>undefined == null</code> 🤯</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <style>
+        #comparisons .comparisons__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="comparisons-nan">
+      <h2 class="comparisons__title">NaN</h2>
+      <pre class="comparisons-nan__code next">
+        <code>const tricky = NaN</code>
+        <code>tricky === NaN // false</code>
+        <div class="next">
+          <code> </code>
+          <code>isNaN(NaN) // true</code>
+          <code>isNaN('wat') // true</code>
+        </div>
+        <div class="next">
+          <code> </code>
+          <code>Number.isNaN(NaN) //true </code>
+          <code class="next">Number.isNaN('wat') //false </code>
+        </div>
+        <div class="next">
+          <code> </code>
+          <code>Object.is(NaN, NaN) // true</code>
+        </div>
+      </pre>
+
+      <style>
+        #comparisons-nan .comparisons-nan__code {
+          font-size: 18px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="comparisons-symbol">
+      <h2 class="comparisons-__title">Symbol</h2>
+      <ul class="comparisons-symbol__list next">
+        <li class="comparisons-symbol__item">ToBoolean – <code>true</code></li>
+        <li class="comparisons-symbol__item next">ToNumber – <code>Error</code></li>
+      </ul>
+
+      <style>
+        #comparisons-symbol__item .comparisons-symbol__item {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="dead">
+      <h2 class="dead__title">☠️</h2>
+
+      <style>
+        #dead {
+          display: grid;
+          place-content: center;
+        }
+
+        #dead .dead__title {
+          font-size: 80px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="avoid">
+      <h2 class="avoid__title">How to Avoid 🪦</h2>
+      <ul class="avoid__list">
+        <li class="avoid__item">
+          <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">TypeScript</a>
+        </li>
+        <li class="avoid__item">
+          <a href="https://eslint.org/docs/latest/rules/eqeqeq" target="_blank" rel="noreferrer">Eslint – eqeqeq rule</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide slide--kottans" id="cast-what-to-read">
+      <h2 class="cast-what-to-read__title">What to Read ✍️</h2>
+      <ul class="cast-what-to-read__list">
+        <li class="cast-what-to-read__item">
+          <a href="https://javascript.info/type-conversions" target="_blank" rel="noreferrer">JavaScript.info – Type Conversions</a>
+        </li>
+        <li class="cast-what-to-read__item">
+          <a href="https://javascript.info/comparison" target="_blank" rel="noreferrer">JavaScript.info – Comparisons</a>
+        </li>
+        <li class="cast-what-to-read__item">
+          <a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md" target="_blank" rel="noreferrer">You Don't Know JS – Types & Grammar</a>
+        </li>
+        <li class="cast-what-to-read__item">
+          <a href="https://tc39.es/ecma262/#sec-type-conversion" target="_blank" rel="noreferrer">TC39. Type Conversion</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="slide slide--kottans" id="cast-questions">
+      <h2 class="cast-questions__title center-title">Questions❓</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="practice">
+      <h2 class="practice__title center-title">Practice🧠</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="practice-tasks">
+      <h2 class="practice-tasks__title">Practice🧠</h2>
+      <ul class="practice-tasks__list next">
+        <li class="practice-tasks__item">
+          <a href="http://jsfiddle.net/what1s1ove/f8pd7cuk/2/" target="_blank" rel="noreferrer">sum()</a>
+        </li>
+        <li class="practice-tasks__item next">
+          <a href="http://jsfiddle.net/what1s1ove/nxj91qg8/1/" target="_blank" rel="noreferrer">the God Check</a>
+        </li>
+        <li class="practice-tasks__item next">
+          <a href="http://jsfiddle.net/what1s1ove/3zvk6Lj1/1/" target="_blank" rel="noreferrer">typeof WAT</a>
+        </li>
+        <li class="practice-tasks__item next">
+          <a href="http://jsfiddle.net/what1s1ove/ucwfh9t5/2/" target="_blank" rel="noreferrer">if falsy</a>
         </li>
       </ul>
     </section>
