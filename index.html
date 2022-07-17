@@ -218,7 +218,7 @@
 
     <section class="slide slide--kottans" id="browser">
       <h2 class="browser__title">JS <s>has</s> is –</h2>
-      <img class="browser__img" src="pictures/old-browser.png" width="350" alt="Old browser">
+      <img class="browser__img next" src="pictures/old-browser.png" width="350" alt="Old browser">
 
       <style>
         #browser .browser__img {
@@ -226,6 +226,193 @@
           margin: 0 auto;
         }
       </style>
+    </section>
+
+    <section class="slide slide--kottans" id="js-data-types-title">
+      <h2 class="js-data-types-title__title center-title">Data types in JS</h2>
+      <a class="bottom-link" href="https://tc39.es/ecma262/#sec-ecmascript-data-types-and-values" target="_blank" rel="noreferrer">ECMAScript Data Types and Values</a>
+    </section>
+
+    <section class="slide slide--kottans" id="js-data-types">
+      <h2 class="js-data-types__title">Data types in JS</h2>
+      <p class="js-data-types__description next">Values & Operations</p>
+      <ul class="js-data-types__list next">
+        <li class="js-data-types__item">Primitives</li>
+        <li class="js-data-types__item next">Complexes <span class="next">(References <span class="next">or Objects)</span></span></li>
+      </ul>
+      <a class="bottom-link" href="https://tc39.es/ecma262/#sec-ecmascript-data-types-and-values" target="_blank" rel="noreferrer">ECMAScript Data Types and Values</a>
+    </section>
+
+    <section class="slide slide--kottans" id="primitives">
+      <h2 class="primitives__title">Primitives</h2>
+      <ul class="primitives__list next">
+        <li class="primitives__item"><code>string</code></li>
+        <li class="primitives__item next"><code>number</code></li>
+        <li class="primitives__item next"><code>boolean</code></li>
+        <li class="primitives__item next"><code>null</code></li>
+        <li class="primitives__item next"><code>undefined</code></li>
+        <li class="primitives__item next"><code>symbol</code></li>
+        <li class="primitives__item next"><code>bigint</code></li>
+      </ul>
+    </section>
+
+    <section class="slide slide--kottans" id="objects">
+      <h2 class="objects__title center-title">Everything else <span class="next">– Object</span></h2>
+    </section>
+
+    <section class="slide slide--kottans" id="typeof">
+      <h2 class="typeof__title">typeof</h2>
+      <ul class="typeof__list next">
+        <li class="typeof__item"><code>typeof 'Kottans 🐈‍⬛' // "number"</code></li>
+        <li class="typeof__item next"><code>typeof false // "boolean"</code></li>
+        <li class="typeof__item next"><code>typeof 1422 // "number"</code></li>
+      </ul>
+      <ul class="typeof__list next">
+        <li class="typeof__item"><code>typeof {} // "object"</code></li>
+        <li class="typeof__item next"><code>typeof [] // "object"</code></li>
+      </ul>
+      <ul class="typeof__list next">
+        <li class="typeof__item"><code>typeof null // "object"</code></li>
+        <li class="typeof__item next"><code>typeof function() {} // "function"</code></li>
+      </ul>
+
+      <style>
+        #typeof .typeof__list {
+          font-size: 22px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="boxing">
+      <h2 class="boxing__title">Magic (Primitive) Methods 🔮</h2>
+      <pre class="boxing__code next">
+        <code>14.22.toString() // "14.22"</code>
+      </pre>
+      <pre class="boxing__code next">
+        <code>// JS Under The Hood</code>
+        <code class="next">new Number(14.22).toString() // "14.22"</code>
+      </pre>
+    </section>
+
+    <section class="slide slide--kottans" id="boxing-wrapper">
+      <h2 class="boxing-wrapper__title">Boxing Wrapper 📦</h2>
+      <pre class="boxing-wrapper__code">
+        <code>const str = new String('Kottans 🐈‍⬛')</code>
+        <code>const n = new Number(1422)</code>
+        <code>const hasSomething = new Boolean(false)</code>
+        <div class="next">
+          <code> </code>
+          <code>if (hasSomething) {</code>
+          <code>  console.log('Bo!👻')</code>
+          <code>}</code>
+        </div>
+        <div class="next">
+          <code> </code>
+          <code>String(1422) // "1422"</code>
+          <code>Number('1422') // 1422</code>
+          <code>Boolean(0) <span class="next">// false</span></code>
+        </div>
+      </pre>
+
+      <style>
+        #boxing-wrapper .boxing-wrapper__code {
+          font-size: 15px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="links">
+      <h2 class="links__title">References data types</h2>
+      <ul class="links__list next">
+        <li class="links__item"><code>Object</code></li>
+        <li class="links__item next"><code>Array</code></li>
+        <li class="links__item next"><code>Function</code></li>
+        <li class="links__item next"><code>RegExp</code></li>
+        <li class="links__item next"><code>Error</code></li>
+        <li class="links__item next"><code>Date</code></li>
+        <li class="links__item next">And more...</li>
+      </ul>
+    </section>
+
+    <section class="slide slide--kottans" id="object-is">
+      <h2 class="object-is__title center-title">Object – always reference</h2>
+    </section>
+
+    <section class="slide slide--kottans" id="literals">
+      <h2 class="literals__title">Literals for References</h2>
+      <pre class="literals__code next">
+        <code>new Object()</code>
+        <code>new Array(1, 2, 3)</code>
+        <code>new Function('a, b', 'return a + b')</code>
+        <code>new RegExp('\w', 'g')</code>
+      </pre>
+      <pre class="literals__code next">
+        <code>{}</code>
+        <code>[1, 2, 3]</code>
+        <code>function(a, b) { return a + b }</code>
+        <code>/\w/g</code>
+      </pre>
+      <p class="literals__text next"><b>Most have a protected constructor:</b> <code>new Array(1, 2, 3) OR Array(1, 2, 3) // [1, 2, 3]</code></p>
+
+      <style>
+        #literals .literals__code {
+          font-size: 19px;
+        }
+
+        #literals .literals__text {
+          font-size: 18px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="class">
+      <h2 class="class__title">[[Class]]</h2>
+      <pre class="class__code next">
+        <code>const obj = {}</code>
+        <code>const arr = []</code>
+        <div class="next">
+          <code> </code>
+          <code>Object.prototype.toString.call(obj) // "[object Object]"</code>
+          <code>Object.prototype.toString.call(arr) // "[object Array]"</code>
+        </div>
+      </pre>
+
+      <style>
+        #class .class__code {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="string-tag">
+      <h2 class="string-tag__title">Symbol.toStringTag</h2>
+      <pre class="string-tag__code next">
+        <code>const kottan = {</code>
+        <code>  [Symbol.toStringTag]: '🐈‍⬛'</code>
+        <code>} </code>
+        <div class="next">
+          <code> </code>
+          <code>Object.prototype.toString.call(kottan) // "[object 🐈‍⬛]"</code>
+        </div>
+      </pre>
+
+      <style>
+        #string-tag .string-tag__code {
+          font-size: 19px;
+        }
+      </style>
+    </section>
+
+    <section class="slide slide--kottans" id="what-to-read">
+      <h2 class="what-to-read__title">What to Read ✍️</h2>
+      <ul class="what-to-read__list">
+        <li class="what-to-read__item">
+          <a href="https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md" target="_blank" rel="noreferrer">You Don't Know JS – Types & Grammar</a>
+        </li>
+        <li class="what-to-read__item">
+          <a href="https://javascript.info/types" target="_blank" rel="noreferrer">JavaScript.info – Data types</a>
+        </li>
+      </ul>
     </section>
 
     <section class="slide slide--kottans" id="thanks">
