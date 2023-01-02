@@ -320,7 +320,7 @@
           <code> </code>
           <code>String(1422) // "1422"</code>
           <code>Number('1422') // 1422</code>
-          <code>Boolean(0) <span class="next">// false</span></code>
+          <code>Boolean(0) // false</code>
         </div>
       </pre>
 
@@ -520,7 +520,7 @@
         <li class="string-to-number__item next">At least one not a number – <code>NaN</code></li>
       </ul>
       <pre class="string-to-number__code next">
-        <code>Number(' 14 ') // 42</code>
+        <code>Number(' 14 ') // 14</code>
         <code>Number('14px') // NaN</code>
         <div class="next">
           <code> </code>
@@ -542,7 +542,7 @@
       <ol class="to-primitive__list">
         <li class="to-primitive__item"><code>Symbol.toPrimitive</code></li>
         <li class="to-primitive__item">
-          <code>valueOf</code> & <code>toString</code>
+          <code>valueOf</code> and/or <code>toString</code>
           <ul class="to-primitive__list">
             <li>If method returned a non-primitive – call another</li>
             <li>If methods returned a non-primitive – error</li>
@@ -635,7 +635,7 @@
     <section class="slide slide--kottans" id="implicit-explicit-string">
       <h2 class="implicit-explicit-string">ToString</h2>
       <ul class="implicit-explicit-string__list next">
-        <li class="implicit-explicit-string__item"><code>String()</code></li>
+        <li class="implicit-explicit-string__item"><code>String()</code>/<code>`${kottan}`</code></li>
         <li class="implicit-explicit-string__item next"><code>object[key]</code></li>
       </ul>
 
@@ -655,6 +655,11 @@
           <ul class="implicit-explicit-number__list next">
             <li class="implicit-explicit-number__item">
               Except – binary plus (<code>value + value</code>)
+              <ul class="implicit-explicit-number__list next">
+                <li class="implicit-explicit-number__item">
+                  Except – for objects, first <code>valueOf</code>, then <code>toSting</code>
+                </li>
+              </ul>
             </li>
           </ul>
         </li>
@@ -671,7 +676,7 @@
       <h2 class="comparisons">Comparisons 🤼</h2>
       <ul class="comparisons__list next">
         <li class="comparisons__item"><code>===</code>, <code>!==</code> – without conversions</li>
-        <li class="comparisons__item next"><code>===</code>, <code>===</code> – compare objects by reference</li>
+        <li class="comparisons__item next"><code>===</code>, <code>==</code> – compare objects by reference</li>
         <li class="comparisons__item next">
           <code>==</code>, <code>!=</code>, <code>></code>, <code><</code>, <code>>=</code>, <code><=</code> – prefer numbers
           <ul class="comparisons__list next">
@@ -720,8 +725,9 @@
     <section class="slide slide--kottans" id="comparisons-symbol">
       <h2 class="comparisons-__title">Symbol</h2>
       <ul class="comparisons-symbol__list next">
-        <li class="comparisons-symbol__item">ToBoolean – <code>true</code></li>
+        <li class="comparisons-symbol__item">ToString – <b>only</b> <code>String(symbol)</code></li>
         <li class="comparisons-symbol__item next">ToNumber – <code>Error</code></li>
+        <li class="comparisons-symbol__item next">ToBoolean – <code>true</code></li>
       </ul>
 
       <style>
