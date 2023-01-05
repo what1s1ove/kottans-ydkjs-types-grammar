@@ -539,13 +539,13 @@
 
     <section class="slide slide--kottans" id="to-primitive">
       <h2 class="to-primitive__title">ToPrimitive</h2>
-      <ol class="to-primitive__list">
+      <ol class="to-primitive__list next">
         <li class="to-primitive__item"><code>Symbol.toPrimitive</code></li>
-        <li class="to-primitive__item">
+        <li class="to-primitive__item next">
           <code>valueOf</code> and/or <code>toString</code>
-          <ul class="to-primitive__list">
+          <ul class="to-primitive__list next">
             <li>If method returned a non-primitive – call another</li>
-            <li>If methods returned a non-primitive – error</li>
+            <li class="next">If methods returned a non-primitive – error</li>
           </ul>
         </li>
       </ol>
